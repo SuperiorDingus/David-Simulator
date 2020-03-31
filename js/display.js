@@ -8,6 +8,8 @@ const Display = function(){
         sctx.scale(1 * player1.direction,1);
         sctx.drawImage(Display.getAnimation(),-22, -35,44,70);
         sctx.restore();
+        sctx.fillRect(0,430,2000,1000);
+
     };
     Display.getAnimation = function(){
         frameNumber++;
