@@ -1,4 +1,4 @@
-// Jimbo 02/14/20
+// Jimbo 03/30/20
 
 window.addEventListener("load", function(event){
     
@@ -10,6 +10,21 @@ window.addEventListener("load", function(event){
     window.addEventListener("resize", display.handleResize);
     window.addEventListener("keydown", Controller.handleKeyDown);
     window.addEventListener("keyup", Controller.handleKeyUp);
+    
+    // copied code
+    function getMousePosition(canvas, event) { 
+            let rect = canvas.getBoundingClientRect(); 
+            let x = event.clientX - rect.left; 
+            let y = event.clientY - rect.top; 
+            Game.placeBlock(x,y);
+        } 
+      
+        let canvasElem = document.querySelector("canvas"); 
+          
+        canvasElem.addEventListener("mousedown", function(e) 
+        { 
+            getMousePosition(canvasElem, e); 
+        }); 
 
     Engine.start();
 });
